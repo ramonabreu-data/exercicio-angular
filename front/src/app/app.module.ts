@@ -16,6 +16,7 @@ import {SidebarModule} from "primeng/sidebar";
 import { SearchboxComponent } from './shared/searchbox/searchbox.component';
 import {InputTextModule} from "primeng/inputtext";
 import {FormsModule} from "@angular/forms";
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import {FormsModule} from "@angular/forms";
     SplitButtonModule,
     SidebarModule,
     InputTextModule,
-    FormsModule
+    FormsModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
