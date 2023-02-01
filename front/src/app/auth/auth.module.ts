@@ -8,7 +8,9 @@ import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    RouterModule
   ]
 })
 export class AuthModule { }
