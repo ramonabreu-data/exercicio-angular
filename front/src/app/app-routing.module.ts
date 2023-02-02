@@ -11,10 +11,12 @@ const routes: Routes = [
   redirectTo: "login",
    pathMatch: 'full'
 },
+/*
   { path:"login",
    component: LoginComponent, 
    title: "Login"
  },
+ */
   { path:"pessoas", 
   component: PessoasComponent,
    title: "Pessoas" 
