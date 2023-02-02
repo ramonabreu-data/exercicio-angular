@@ -17,6 +17,7 @@ import { SearchboxComponent } from './shared/searchbox/searchbox.component';
 import {InputTextModule} from "primeng/inputtext";
 import {FormsModule} from "@angular/forms";
 import { AuthModule } from './auth/auth.module';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { AuthModule } from './auth/auth.module';
     SetoresComponent,
     SidebarComponent,
     SearchboxComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
