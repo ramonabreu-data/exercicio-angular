@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginRoutes } from './auth/auth-routing.module';
+import { AuthGuard } from './auth/auth.guard';
 
 import { LoginComponent } from './pages/login/login.component';
 import { PessoasComponent } from './pages/pessoas/pessoas.component';
@@ -19,11 +20,18 @@ const routes: Routes = [
  */
   { path:"pessoas", 
   component: PessoasComponent,
-   title: "Pessoas" 
+  canActivate: [AuthGuard],
+  data: {
+  role: 'ADMIN,ESTAGIÁRIO,ADVOGADO,PROCURADOR'
+  }
+   
 },
   { path:"setores", 
   component: SetoresComponent, 
-  title: "Setores"
+  canActivate: [AuthGuard],
+  data: {
+  role: 'ADMIN,ESTAGIÁRIO,ADVOGADO,PROCURADOR'
+  }
  },
 
  
