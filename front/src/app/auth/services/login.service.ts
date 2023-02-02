@@ -25,19 +25,19 @@ export class LoginService {
     delete localStorage[LS_CHAVE];
   }
   login(login:Login):Observable<Usuario | null>{
-    let usu = new Usuario(1,"Razer-Estagiágio",
+    let usu = new Usuario(1,"R-Estagiágio",
             login.login, login.senha, "ESTAGIÁRIO"
     );
     if(login.login == login.senha){
       if(login.login == "admin"){
-        usu = new Usuario(1, "Razer-Admin", login.login, login.senha, "ADMIN");
+        usu = new Usuario(1, "R-Admin", login.login, login.senha, "ADMIN");
       }
       else if(login.login == "advogado"){
-          usu = new Usuario(1, "Razer-Advogado", login.login, login.senha, "ADVOGADO");
+          usu = new Usuario(1, "R-Advogado", login.login, login.senha, "ADVOGADO");
 
     }
     else if(login.login == "procurador"){
-      usu = new Usuario(1, "Razer-Procurador", login.login, login.senha, "PROCURADOR");
+      usu = new Usuario(1, "R-Procurador", login.login, login.senha, "PROCURADOR");
 
     }
       return of(usu);
