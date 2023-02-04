@@ -19,6 +19,8 @@ import {FormsModule} from "@angular/forms";
 import { AuthModule } from './auth/auth.module';
 import { HomeComponent } from './home/home.component';
 
+import { PessoaModule } from './pessoa/pessoa.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +42,8 @@ import { HomeComponent } from './home/home.component';
     SidebarModule,
     InputTextModule,
     FormsModule,
-    AuthModule
+    AuthModule,
+    PessoaModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
