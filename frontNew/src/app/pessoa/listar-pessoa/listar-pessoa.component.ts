@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { Pessoa } from 'src/app/shared/models/pessoa.model';
 import { PessoaService } from '../services/pessoa.service';
 
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-listar-pessoa',
@@ -20,13 +22,9 @@ export class ListarPessoaComponent implements OnInit{
   }
 
   listarTodos(): Pessoa[]{
-    //return this.pessoaService.listarTodos();
+    return this.pessoaService.listarTodos();
 
-    return[
-      new Pessoa (1,"Ramon","Advogado","Gabinete"),
-      new Pessoa (1,"Renata","Procurador","Vara"),
-      new Pessoa (1,"Rúbia","Estagiário","Gabinete"),
-    ];
+    
 
   }
 }
