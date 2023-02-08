@@ -30,7 +30,7 @@ export class EditarPessoaComponent implements OnInit{
       throw new Error("Pessoa não encontrada: id = " + id);
 
   }
-
+  
   atualizar(): void {
     // Verifica se o formulário é válido
     if (this.formPessoa.form.valid) {

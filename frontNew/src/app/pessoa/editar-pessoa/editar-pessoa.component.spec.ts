@@ -1,23 +1,56 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ActivatedRoute, Router } from '@angular/router';
+import { of } from 'rxjs';
+import { FormGroup, FormControl } from '@angular/forms';
+import { PessoaService } from '../services/pessoa.service';
 
-import { EditarPessoaComponent } from './editar-pessoa.component';
+describe('PessoaDetalhe', () => {
+  let component: any;
+  let fixture: ComponentFixture<any>;
+  let pessoaService: PessoaService;
+  let router: Router;
+  let route: ActivatedRoute;
 
-describe('EditarPessoaComponent', () => {
-  let component: EditarPessoaComponent;
-  let fixture: ComponentFixture<EditarPessoaComponent>;
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      providers: [
+        {
+          provide: PessoaService,
+          useValue: { buscarPorId: () => of({ id: 1, nome: 'Teste' }), atualizar: () => {} },
+        },
+        {
+          provide: Router,
+          useValue: { navigate: () => {} },
+        },
+        {
+          provide: ActivatedRoute,
+          useValue: { snapshot: { params: { id: 1 } } },
+        },
+      ],
+    });
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ EditarPessoaComponent ]
-    })
-    .compileComponents();
-
-    fixture = TestBed.createComponent(EditarPessoaComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
+    pessoaService = TestBed.inject(PessoaService);
+    router = TestBed.inject(Router);
+    route = TestBed.inject(ActivatedRoute);
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it(' ngOnInit', () => {
+    component.ngOnInit();
+    expect(component.pessoa).toEqual({ id: 1, nome: 'Teste' });
+  });
+
+  it('atualizar', () => {
+    spyOn(pessoaService, 'atualizar').and.callThrough();
+    spyOn(router, 'navigate').and.callThrough();
+    component.formPessoa = new FormGroup({
+      nome: new FormControl(),
+    });
+    component.formPessoa.markAsTouched();
+    component.formPessoa.markAsDirty();
+    component.formPessoa.setValue({ nome: 'Teste' });
+    component.atualizar();
+    expect(pessoaService.atualizar).toHaveBeenCalledWith({ id: 1, nome: 'Teste' });
+    expect(router.navigate).toHaveBeenCalledWith(['/pessoas']);
   });
 });
