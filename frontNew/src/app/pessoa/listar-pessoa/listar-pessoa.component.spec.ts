@@ -18,7 +18,7 @@ describe('ListarPessoaComponent', () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
-  /*
+
   it('Deve retornar a lista de pessoas corretamente', () => {
     const pessoaService = TestBed.get(PessoaService);
     spyOn(pessoaService, 'listarTodos').and.returnValue([new Pessoa(undefined)]);
@@ -38,7 +38,7 @@ describe('ListarPessoaComponent', () => {
     const pessoaService = TestBed.get(PessoaService);
     expect(pessoaService).toBeTruthy();
   });
-  */
+  
 
   it('should create', () => {
     expect(component).toBeTruthy();
