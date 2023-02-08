@@ -18,7 +18,8 @@
             <td> {{pessoa.cargo}}</td>
             <td> {{pessoa.setor}}</td>
             <td class="text-center" style="width: 300px">
-                <a href="#" title="Editar" alt="Editar" class="btn btn-xs btn-info">
+                <a href="#" title="Editar" alt="Editar" class="btn btn-xs btn-info"
+                [routerLink]="['/pessoas/editar',pessoa.id]">
                     <i class="fa fa-pencil-alt" aria-hidden="true"></i> Editar
                 </a>
                 

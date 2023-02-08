@@ -6,6 +6,7 @@ import { ListarPessoaComponent } from './listar-pessoa/listar-pessoa.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { InserirPessoaComponent } from './inserir-pessoa/inserir-pessoa.component';
+import { EditarPessoaComponent } from './editar-pessoa/editar-pessoa.component';
 
 
 
@@ -13,7 +14,8 @@ import { InserirPessoaComponent } from './inserir-pessoa/inserir-pessoa.componen
 @NgModule({
   declarations: [
     ListarPessoaComponent,
-    InserirPessoaComponent
+    InserirPessoaComponent,
+    EditarPessoaComponent
   ],
   imports: [
     CommonModule,
