@@ -24,6 +24,5 @@ export class PessoasComponent {
 
   async busca(q: string) {
     this.pessoas = await this.api.getPessoas(q)
-    this.pessoas = await this.api.getPessoas(q)
   }
 }

@@ -16,10 +16,6 @@ import {SidebarModule} from "primeng/sidebar";
 import { SearchboxComponent } from './shared/searchbox/searchbox.component';
 import {InputTextModule} from "primeng/inputtext";
 import {FormsModule} from "@angular/forms";
-import { AuthModule } from './auth/auth.module';
-import { HomeComponent } from './home/home.component';
-
-import { PessoaModule } from './pessoa/pessoa.module';
 
 @NgModule({
   declarations: [
@@ -29,7 +25,6 @@ import { PessoaModule } from './pessoa/pessoa.module';
     SetoresComponent,
     SidebarComponent,
     SearchboxComponent,
-    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,9 +36,7 @@ import { PessoaModule } from './pessoa/pessoa.module';
     SplitButtonModule,
     SidebarModule,
     InputTextModule,
-    FormsModule,
-    AuthModule,
-    PessoaModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
