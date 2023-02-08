@@ -14,7 +14,7 @@ redirectTo: 'pessoas/listar' },
 component: ListarPessoaComponent },
 {path: 'pessoas/novo',
   component: InserirPessoaComponent}, 
-  {path: 'pessoas/editar',
+  {path: 'pessoas/editar/:id',
     component: EditarPessoaComponent}
 ];
 

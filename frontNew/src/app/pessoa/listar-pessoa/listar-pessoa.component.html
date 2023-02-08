@@ -1,6 +1,7 @@
 <h3>Pessoas</h3>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
 <table class="table table-striped table-bordered table-hover bg-blue">
+    
     <tbody>
         <tr>
             <th>Nome</th>
@@ -13,7 +14,7 @@
                 </a>
             </th>
         </tr>
-        <tr *ngFor="let pessoa of pessoas">
+        <tr *ngFor="let pessoa of pessoas" >
             <td> {{pessoa.nome}}</td>
             <td> {{pessoa.cargo}}</td>
             <td> {{pessoa.setor}}</td>

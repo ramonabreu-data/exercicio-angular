@@ -20,7 +20,9 @@ export class ListarPessoaComponent implements OnInit{
   ngOnInit(): void {
       this.pessoas = this.listarTodos();
   }
-
+  search() {
+    // Filtre aqui as pessoas com base no termo de pesquisa
+  }
   listarTodos(): Pessoa[]{
     return this.pessoaService.listarTodos();
 
@@ -35,5 +37,9 @@ export class ListarPessoaComponent implements OnInit{
     this.pessoas = this.listarTodos();
     }
     }
+
+    doSearch(): void {
+      // Adicione aqui a lógica de busca usando o atributo "text"
+      }
 }
 
